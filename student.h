@@ -24,14 +24,20 @@ namespace SeoMinchae2649083
 
         }
 
-        void testGrade()
+        // void testGrade()
+        // {
+        //     if(grade < 'A' || grade > 'F')
+        //     {
+        //         std::cout << "Invalid Grade \n";
+        //         std::exit(1);
+        //     }
+        // }
+
+
+        void calGrade()
         {
-            if(grade < 'A' || grade > 'F')
-            {
-                std::cout << "Invalid Grade \n";
-                std::exit(1);
-            }
         }
+
 
         void testScore()
         {
@@ -46,7 +52,9 @@ namespace SeoMinchae2649083
         public: 
         student(const std::string& n = "no name yet", int d = 1234567, int s = 0, char g = 'F')
         :name{n}, id{d}, score{s}, grade{g}
-        {testID(); testGrade(); testScore();}
+        {testID(); 
+            // testGrade(); 
+            testScore();}
 
         void setName(const std::string& n){name=n;}
         void setID(int d)
@@ -54,7 +62,7 @@ namespace SeoMinchae2649083
         void setScore(int s)
         {score =s; testScore();}
         void setGrade(char g)
-        {grade =g; testGrade();}
+        {grade =g;}
 
         void input()
         {
@@ -66,9 +74,10 @@ namespace SeoMinchae2649083
             std::cout << "Enter score:";
             std::cin >> score; 
             testScore();
-            std::cout << "Enter grade:";
-            std::cin >> grade;
-            testGrade();
+            // std::cout << "Enter grade:";
+            // std::cin >> grade;
+            // testGrade();
+            calGrade();
         }
         
         
@@ -81,7 +90,7 @@ namespace SeoMinchae2649083
             std::cout << "Enter score:";
             is >> s.score; s.testScore();
             std::cout << "Enter grade:";
-            is >> s.grade; s.testGrade();
+            is >> s.grade;
             return is;
         }
 
@@ -94,7 +103,7 @@ namespace SeoMinchae2649083
         
         friend std::ostream& operator<<(std::ostream& os, const student& s)
         {
-            os << s.name << ", " << s.id << ", " << s.score << ", " << s.grade << "\n";
+            os << s.name << " () " << s.id << ", " << s.score << ", " << s.grade << "\n";
             
             return os;
         }

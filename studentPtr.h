@@ -14,7 +14,7 @@ namespace SeoMinchae2649083
 
       std::cout << "move";
             sPtr = std::move.sPtr;
-            move.sPtr = nullptr;
+            std::move.sPtr = nullptr;
         }
 
         studentPtr(const studentPtr& copy)
@@ -28,7 +28,7 @@ namespace SeoMinchae2649083
                 sPtr = new student{*copy.sPtr} : nullptr;}
             return *this;
         }
-        }
+        
 
         studentPtr& operator=(studentPtr&& move)noexcept
         {

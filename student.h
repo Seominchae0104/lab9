@@ -98,12 +98,12 @@ namespace SeoMinchae2649083
 
 // const
         void print() const
-        {std::cout << name << ", " << id << ", " << score << ", " << grade;}
+        {std::cout << name << " ( " << id << " ) " << score << " ( " << grade << " ) ";}
         
         
         friend std::ostream& operator<<(std::ostream& os, const student& s)
         {
-            os << s.name << " () " << s.id << ", " << s.score << ", " << s.grade << "\n";
+            os << s.name << " ( " << s.id << ") " << s.score << " ( " << s.grade << " )\n";
             
             return os;
         }
